@@ -35,11 +35,13 @@ const List = ({ trending, setLimit, limit, topic }) => {
           {trending
             ?.slice(0, limit)
             .filter((post) => {
-              if (searchTerm == "") {
+              if (searchTerm === "") {
                 return post;
               }
               if (
-                post.data.title.toLowerCase().includes(searchTerm.toLowerCase())
+                post.data.title
+                  .toLowerCase()
+                  .includes(searchTerm?.toLowerCase())
               ) {
                 return post;
               }
