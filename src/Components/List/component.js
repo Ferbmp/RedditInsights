@@ -12,7 +12,7 @@ import {
 
 const List = ({ trending, setLimit, limit, topic }) => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  console.log(trending);
   return (
     <>
       <PostsList>
@@ -64,7 +64,9 @@ const List = ({ trending, setLimit, limit, topic }) => {
                     </h5>
                     <p>{posts.data.main}</p>
                     <div>
-                      <a href={posts.data.url}>
+                      <a
+                        href={`https://www.reddit.com/${posts.data.permalink}`}
+                      >
                         <h1>Acessar Post</h1>
                       </a>
                     </div>
