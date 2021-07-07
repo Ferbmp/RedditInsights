@@ -4,16 +4,12 @@ import { ButtonContainer, ShowMoreButton } from "./style";
 const ShowMore = ({ setLimit, limit }) => {
   const LoadMore = useCallback(() => {
     setLimit(limit + 5);
-  }, [limit]);
-
-  const loadMore = () => {
-    setLimit(limit + 5);
-  };
+  }, [limit, setLimit]);
 
   return (
     <>
       <ButtonContainer>
-        <ShowMoreButton onClick={loadMore}>
+        <ShowMoreButton onClick={LoadMore}>
           {" "}
           <span>+</span> Mostrar Mais
         </ShowMoreButton>
